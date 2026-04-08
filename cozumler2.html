@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Soru Çözümleri</title>
+    <!-- Matematiksel formüllerin kusursuz görünmesi için MathJax ekliyoruz -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 900px;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 { text-align: center; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+        h2 { color: #2980b9; margin-top: 40px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        h3 { color: #8e44ad; }
+        .solution-box {
+            background-color: #fff;
+            padding: 15px 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #27ae60;
+            border-radius: 4px;
+        }
+        .note {
+            background-color: #e8f8f5;
+            padding: 10px;
+            border-left: 3px solid #1abc9c;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>1. ve 2. Sayfa Soru Çözümleri</h1>
+
+    <!-- 1. GÖRSEL ÇÖZÜMLERİ -->
+    <h2>1. GÖRSEL (Temel Analiz / Türev Uygulamaları)</h2>
+
+    <h3>1) Aşağıdaki fonksiyonların türevlerini en sağda verilen değişkene göre alınız.</h3>
+    <div class="solution-box">
+        <p><strong>a)</strong> \( y = f(x) = x^3 - 2x^2 + 5x \) (Değişken: "\(x\)")</p>
+        <p>Polinomlarda türev kuralı (üs başa gelir, üs bir azaltılır) uygulanır: <br>
+           <strong>Çözüm:</strong> \( f'(x) = \frac{dy}{dx} = 3x^2 - 4x + 5 \)</p>
+        
+        <p><strong>b)</strong> \( y = f(t) = e^{2t^2+3t} \) (Değişken: "\(t\)")</p>
+        <p>Üstel fonksiyonun türevi için zincir kuralı uygulanır. \( (e^u)' = u' \cdot e^u \): <br>
+           Üssün türevi: \( (2t^2 + 3t)' = 4t + 3 \)<br>
+           <strong>Çözüm:</strong> \( f'(t) = \frac{dy}{dt} = (4t + 3) \cdot e^{2t^2+3t} \)</p>
+        
+        <p><strong>c)</strong> \( y = f(x) = \ln(x^2 + 2x) \) (Değişken: "\(x\)")</p>
+        <p>Logaritma fonksiyonunun türevi için zincir kuralı uygulanır. \( (\ln u)' = \frac{u'}{u} \): <br>
+           İçinin türevi: \( (x^2 + 2x)' = 2x + 2 \)<br>
+           <strong>Çözüm:</strong> \( f'(x) = \frac{dy}{dx} = \frac{2x + 2}{x^2 + 2x} \)</p>
+    </div>
+
+    <h3>2) Aşağıdaki fonksiyonların artışına/azalışına ilişkin gerekli hesaplama ve açıklamaları yapınız.</h3>
+    <div class="solution-box">
+        <p>Bir fonksiyonun türevi \(f'(x) > 0\) ise fonksiyon artan, \(f'(x) < 0\) ise fonksiyon azalandır.</p>
+        
+        <p><strong>a)</strong> \( y = f(x) = x^3 + 5x \)</p>
+        <p>Birinci türevi alalım: \( f'(x) = 3x^2 + 5 \)<br>
+        Herhangi bir reel sayının karesi negatif olamayacağından \( (x^2 \geq 0) \), ifadenin alabileceği en küçük değer \( x=0 \) iken \( 5 \)'tir. Yani tüm reel sayılar için \( 3x^2 + 5 > 0 \)'dır. <br>
+        <strong>Açıklama:</strong> Fonksiyonun birinci türevi tanım kümesindeki her noktada pozitif olduğu için, bu fonksiyon <strong>daima artandır.</strong> (Hiçbir noktada azalmaz.)</p>
+        
+        <p><strong>b)</strong> \( y = f(x) = e^{2x} \)</p>
+        <p>Birinci türevi alalım: \( f'(x) = 2e^{2x} \)<br>
+        Euler sayısının pozitif veya negatif tüm kuvvetleri her zaman sıfırdan büyüktür \( (e^{2x} > 0) \). Bu nedenle iki katı da kesinlikle pozitiftir. Tüm reel sayılar için \( 2e^{2x} > 0 \)'dır.<br>
+        <strong>Açıklama:</strong> Birinci türev sürekli sıfırdan büyük olduğu için bu fonksiyon da tanım aralığında <strong>daima artandır.</strong></p>
+    </div>
+
+    <h3>3) Aşağıdaki fonksiyonların maksimum/minimum noktalarını (varsa) bulunuz ve açıklayınız.</h3>
+    <div class="solution-box">
+        <p>Yerel uç noktalar (ekstremum) birinci türevi sıfır yapan \( (f'(x) = 0) \) kritik noktalarda aranır.</p>
+        
+        <p><strong>a)</strong> \( y = f(x) = x^2 \)</p>
+        <p>Birinci türevi alıp sıfıra eşitleyelim: \( f'(x) = 2x = 0 \implies x = 0 \) (Kritik nokta).<br>
+        Türevin işaretini veya ikinci türev testini kullanabiliriz. İkinci türevi alalım: \( f''(x) = 2 \).<br>
+        Kritik noktada ikinci türev sıfırdan büyük \( (f''(0) = 2 > 0) \) olduğu için grafik kollarını yukarı açan bir çukur oluşturur. Yani burada bir <strong>minimum noktası</strong> vardır.<br>
+        Minimum noktasının ordinat değeri: \( f(0) = 0^2 = 0 \).<br>
+        <strong>Sonuç:</strong> Fonksiyonun \( (0,0) \) noktasında global (ve yerel) bir minimumu vardır. Maksimum noktası ise (artı sonsuza gittiği için) yoktur.</p>
+        
+        <p><strong>b)</strong> \( y = f(x) = e^{2x} \)</p>
+        <p>Birinci türevi alıp sıfıra eşitlemeye çalışalım: \( f'(x) = 2e^{2x} = 0 \).<br>
+        Hiçbir \(x\) reel sayısı için \( e^{2x} \) değeri sıfıra eşit olamaz (Sadece limiti \(-\infty\)'a giderken \(0\)'a yaklaşır, ulaşamaz). Kritik nokta bulunmamaktadır.<br>
+        <strong>Sonuç:</strong> Bu fonksiyon her yerde artan olduğu ve birinci türevi sıfır olamadığı için, üzerinde belirlenebilen herhangi bir <strong>maksimum veya minimum noktası yoktur.</strong></p>
+    </div>
+
+    <!-- 2. GÖRSEL ÇÖZÜMLERİ -->
+    <h2>2. GÖRSEL (Tüketici Teorisi / Optimizasyon Uygulamaları)</h2>
+
+    <h3>1) Verilen fayda fonksiyonu için Kısıt Altında Optimum \(\boldsymbol{X_1}\) ve \(\boldsymbol{X_2}\) Düzeylerini Bulunuz.</h3>
+    <div class="solution-box">
+        <p>Fayda Fonksiyonu: \( F(X_1, X_2) = X_1^{0.2} X_2^{0.8} \) (Cobb-Douglas Tipinde)<br>
+           Kısıt (Bütçe): \( M = P_1X_1 + P_2X_2 \implies 200 = 4X_1 + 6X_2 \)</p>
+        
+        <p>Optimum nokta için gerekli marjinal şart (Marjinal İkame Oranının - Fiyatların oranına eşitliği): <br>
+        \( MRS = \frac{MU_1}{MU_2} = \frac{P_1}{P_2} \) (Veya Lagrange yöntemi de aynı sonucu verir)</p>
+        
+        <p>\(X_1\)'in Marjinal Faydası (\(X_1\)'e göre kısmi türev): \( MU_1 = \frac{\partial F}{\partial X_1} = 0.2 X_1^{-0.8} X_2^{0.8} \)<br>
+           \(X_2\)'nin Marjinal Faydası (\(X_2\)'ye göre kısmi türev): \( MU_2 = \frac{\partial F}{\partial X_2} = 0.8 X_1^{0.2} X_2^{-0.2} \)</p>
+           
+        <p>\( \frac{MU_1}{MU_2} = \frac{0.2 X_1^{-0.8} X_2^{0.8}}{0.8 X_1^{0.2} X_2^{-0.2}} = \frac{0.2 X_2}{0.8 X_1} = \frac{X_2}{4X_1} \)</p>
+        
+        <p>Bu oranı fiyatlar oranına eşitleyelim: \( \frac{P_1}{P_2} = \frac{4}{6} = \frac{2}{3} \)<br>
+        \( \frac{X_2}{4X_1} = \frac{2}{3} \implies 3X_2 = 8X_1 \implies X_2 = \frac{8}{3}X_1 \)</p>
+        
+        <p>Bütçe kısıtında yerine yazalım:<br>
+        \( 200 = 4X_1 + 6\left(\frac{8}{3}X_1\right) \)<br>
+        \( 200 = 4X_1 + 2(8X_1) \)<br>
+        \( 200 = 4X_1 + 16X_1 \)<br>
+        \( 200 = 20X_1 \implies \mathbf{X_1^* = 10} \)</p>
+        
+        <p>\( X_2^* \)'yi bulmak için yerine yazalım:<br>
+        \( X_2^* = \frac{8}{3}(10) \implies \mathbf{X_2^* = \frac{80}{3}} \approx 26.66 \)</p>
+    </div>
+
+    <h3>2) Verilen doğrusal fayda fonksiyonu için Kısıt Altında Optimum \(\boldsymbol{X_1}\) ve \(\boldsymbol{X_2}\) Düzeylerini Bulunuz.</h3>
+    <div class="solution-box">
+        <p>Fayda Fonksiyonu: \( F(X_1, X_2) = 2X_1 + 2X_2 \) (Tam İkame Mal Tipinde)<br>
+           Kısıt (Bütçe): \( M = P_1X_1 + P_2X_2 \implies 200 = 6X_1 + 8X_2 \)</p>
+        
+        <p>Bu tip (doğrusal) fayda fonksiyonlarında <strong>köşe çözümü (corner solution)</strong> ihtimali yüksektir. Parayı harcamadan önce 1 TL başına düşen marjinal faydalara veya doğrudan eğimlere bakarız.</p>
+        
+        <p>Marjinal İkame Oranı (\(MRS\)): <br>
+        \( MU_1 = 2 \) ve \( MU_2 = 2 \) olduğundan; \( MRS = \frac{MU_1}{MU_2} = \frac{2}{2} = \mathbf{1} \)</p>
+        
+        <p>Piyasadaki Fiyatlar Oranı: <br>
+        \( \frac{P_1}{P_2} = \frac{6}{8} = \mathbf{0.75} \)</p>
+        
+        <p><strong>Durum Analizi:</strong><br>
+        \( MRS > \frac{P_1}{P_2} \) dir. Yani tüketici mallara kafa kafaya aynı değeri biçerken (\(X_1\) = \(X_2\)), piyasada 1. Mal daha ucuzdur. Bu durumda rasyonel tüketici "en uygun ve faydalı olan mala bütçesinin <u>tamamını</u> gömer". Başka bir ifadeyle paranın \(X_1\)'deki marjinal verimliliği (\(\frac{2}{6}\)), \(X_2\)'deki marjinal verimliliğinden (\(\frac{2}{8}\)) daha yüksektir.</p>
+        
+        <p>Bu nedenle tüketici hiçbir şekilde \(X_2\) tüketmeyecektir (\(X_2^* = 0\)). Tüm parasıyla 1. Malı alacaktır.</p>
+        <p>\( 200 = 6(X_1) + 8(0) \implies 6X_1 = 200 \implies \mathbf{X_1^* = \frac{200}{6} = \frac{100}{3}} \approx 33.33 \)</p>
+        
+        <p><strong>Optimum sepet:</strong> \( \mathbf{(X_1 = \frac{100}{3},\ X_2 = 0)} \)</p>
+    </div>
+
+    <h3>3) Yukarıdaki iki soruda yer alan fayda fonksiyonlarının farklarını ve çözümleme farklılıklarını açıklayınız.</h3>
+    <div class="solution-box">
+        <p>Sıralı çözülen bu iki soru Mikroiktisatta tüketici davranışı hakkında harika bir örnek zıtlığı temsil eder. Farklar iki temel temele dayanır:</p>
+        
+        <p><strong>a) Şekil ve İkame Esnekliği (Matematiksel Yapı Farkı):</strong><br>
+        1. Sorudaki <strong>Cobb-Douglas</strong> fonksiyonunda \( (X_1^{0.2} X_2^{0.8}) \), tüketim miktarında "Azalan Marjinal Fayda" yasası ve kayıtsızlık eğrilerinde orijine kesin dışbükeylik (konveks) geçerlidir. Yani mallar birbirini zorunlu (imperfect) olarak ikame eder. Biri olmadan diğerinden maksimum verim alınmaz.<br>
+        2. Sorudaki <strong>Doğrusal Fonksiyon</strong> ise \( (2X_1 + 2X_2) \), <em>"Tam İkame"</em> mallarını temsil eder. Marjinal faydaları tüketim miktarından bağımsız sabittir (Azalan fayda yasası çalışmaz, daima dümdüz azalır veya artar). Örneğin 1 kg Kırmızı Elma ve 1 kg Yeşil Elma tüketimi farksızdır. Kayıtsızlık eğrileri negatif eğimli dümdüz bir çizgidir.</p>
+
+        <p><strong>b) Sonuca ve Analize (Çözümleme) Yansıma Farkları:</strong><br>
+        1. Cobb-Douglas tarzında eğrinin eğimi \(MRS\) noktasal bazda süreklilik içerisinde değişkenlik gösterdiğinden bütçe doğrusuna mutlaka ortalarda teğet olunabileceği tek bir <strong>"İçsel Çözüm" (Interior Solution)</strong> bulunur. Yani rasyonel insan iki maldan da piyasadaki fayda denge durumlarına ve parasının yeteceği optimuma doğru makul paylaşımlar alarak sepet oluşturur (\(X_1>0, X_2>0\)). Fiyatları doğrudan bölüştürüp paylara pay eder.</p>
+        <p>2. Doğrusal faydada marjinal ikame oranındaki 1 verimi 1 götürümü olduğu sabittir. Eğim fiyatlara (\(MRS = P_1/P_2\)) eşit olmadıkça kayıtsızlık doğrusu hiçbir zaman içsel ortamda iç kesişim bulamaz. Bu tarz sorularda doğrudan ucuz mala kaçılır veya daha kâr veren harcanış olan tarafta sonuç kilitlenir (tek tipe bütçe boşanır). Sonucu kesinlikle bir eksenin kesildiği sınırda bulacağınız buna literatürde <strong>"Köşe Çözümü" (Corner Solution)</strong> denir ve optimizasyonda mallardan biri mutlaka "Sıfır" bulunur.</p>
+    </div>
+
+    <p style="text-align:center; font-size:14px; margin-top:50px;">Bu sayfayı oluşturup tüm metinleri matematik formunda doğru görünmesi ile sunan bir HTML+Mathjax şablonudur. Masaüstünüzden html formatında açarsanız kusursuz ve formatta render aldığını göreceksiniz. Başarılar dilerim.</p>
+</body>
+</html>
